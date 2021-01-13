@@ -17,11 +17,11 @@ function createVillager(req,res) {
 
 function show(req,res) {
     console.log(req.params.id),
-    User.find({}, function(err, users, req) {
-        users.forEach(function(user,req) {
+    User.find({}, function(err, users) {
+        users.forEach(function(user) {
             // console.log(user.villagers)
             let villagers = user.villagers;
-            villagers.forEach(function(villager,req) {
+            villagers.forEach(function(villager) {
                 console.log(villager._id)
                 if (villager._id === req.params.id) {
                     console.log(villager)
