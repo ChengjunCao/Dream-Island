@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>Dream Island</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/index-style.css' />
+</head>
+
+<body>
+  <nav>
+    <div>
+      <ul>
+        <a href="" id="brand-logo">Dream Island</a>
+        <li id="navbar">
+          <% if (user) { %>
+          <a href="/logout"><i class="material-icons left">trending_flat</i><span class="log">Log Out</span></a>
+          <% } else { %>
+          <a href="/auth/google"><i class="material-icons left">vpn_key</i><span class="log">Login with Google</span></a> <% } %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</body>
 </html>

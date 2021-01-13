@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url(https://www.ordinaryreviews.com/wp-content/uploads/2020/03/animal-crossing-new-horizons-launches.jpg);
+  background-size: cover;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav {
+  position: absolute;
+  left:0;
+  top:0;
+  height: 50px;
+  width: 100%;
+  background: rgba(87, 124, 181, 0.9);
+}
+
+#navbar {
+  position: absolute;
+  right: 30px;
+  top: 13px;
+  list-style: none;
+
+}
+
+#brand-logo {
+  position: relative;
+  bottom: 7px;
+  font-size: 2em;
+}
+
+.log {
+  position: relative;
+  bottom: 5px;
+  left: 5px;
+}
