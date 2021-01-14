@@ -1,18 +1,19 @@
 <%- include('../header') %>
-    <a href="/users/<%= user._id %>">Back to User page</a>
+    <a id="back-link" href="/users/<%= user._id %>">Back to User page</a>
     <h1>Hi, I'm <%= result.name %>!</h1>
     <h3>Welcome to my page! <%= result.catchphrase %>
     </h3>
-    <img src="<%= result.profilepic %>">
-    <div>
-        <p>Here's a little bit about me: </p>
+    <img id="show-pic" src="<%= result.profilepic %>">
+    <div id="villager-info">
+        <p><strong>Here's a little bit about me:</strong></p>
         <p>My birthday is <%= result.birthday %>
         </p>
         <p>I am a <%= result.species %>, <%= result.catchphrase %>
         </p>
         <p>I'm a <%= result.personality %> villager</p>
-        <p>And of course, I like the word "<%= result.catchphrase %>" a lot! <%= result.catchphrase %> <a
-                        href="/villagers/<%= result._id %>/edit">Update Catchphrase</a></p>
+        <p>I like the word "<%= result.catchphrase %>" a lot! <%= result.catchphrase %>
+        </p>
+        <a href="/villagers/<%= result._id %>/edit">Update My Catchphrase</a>
     </div>
     </body>
 

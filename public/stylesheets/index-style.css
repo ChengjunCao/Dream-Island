@@ -16,10 +16,11 @@ li {
 a {
   color: beige;
   text-decoration: none;
+  font-size: 24px;
 }
 
 header {
-  height: 55px;
+  height: 58px;
   width: 100%;
   display: flex;
   justify-content: space-around;

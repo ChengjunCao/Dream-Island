@@ -23,7 +23,7 @@
                                     </a><br>
                                     <img id="profile-pic" src="<%= v.profilepic %>" alt="picture of <%= v.name %>">
                                     <form action="/villagers/<%= v._id %>?_method=DELETE" method="POST">
-                                        <button type="submit">X</button>
+                                        <button class="delete-button" type="submit">X</button>
                                     </form>
                                 </div>
                                 <% }); %>
@@ -33,7 +33,24 @@
                     </div>
                     <a href="/users/<%= user._id %>/villagers/new">Add Villager</a>
                 </section>
-                <a href="/users/<%= user._id %>/pictures/new">Add Picture</a>
+                <section id="my-pictures">
+                    <h2>My Pictures</h2>
+                    <a id="upload-pics" href="/users/<%= user._id %>/pictures/new">Upload Picture</a>
+                    <% if (user.pictures.length) { %>
+                        <div id="users">
+                            <% user.pictures.forEach(function(picture) { %>
+                                <div id="share-area">
+                                    <img id="share-pics" src="<%= picture.url %>">
+                                    <form action="/pictures/<%= picture._id %>?_method=DELETE" method="POST">
+                                        <button class="delete-button" type="submit">X</button>
+                                    </form>
+                                </div>
+                                <% }) %>
+                        </div>
+                        <% } else { %>
+                            <p> No Pictures Yet</p>
+                            <% } %>
+                </section>
                 <% } %>
     </div>
     </body>

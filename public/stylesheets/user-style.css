@@ -8,6 +8,7 @@ body {
   background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),url(https://media.idownloadblog.com/wp-content/uploads/2020/04/Animal-Crossing-iPhone-wallpaper-Matt-MacPherson-iDownloadblog-1.png);
   background-size: cover;
   font-family: 'Gaegu', cursive;
+  text-align: center;
 }
 
 li {
@@ -17,10 +18,30 @@ li {
 a {
   color: beige;
   text-decoration: none;
+  font-size: 24px;
+}
+
+h1,h2,h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+textarea {
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+  text-align: center;
 }
 
 header {
-  height: 55px;
+  height: 58px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -66,7 +87,74 @@ i {
   left: 7px;
 }
 
+/* Community page styling starts here */
+
+.welcome-message {
+  margin: 10px 0 20px 0;
+  font-size: 2.5em;
+  color:rgba(14, 12, 10, 0.851);
+}
+
+#user-info {
+  font-size: 1.5em;
+  color: rgba(25, 55, 9, 0.653);
+}
+
+#back-link {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  font-size: 1.3em;
+  color: rgba(165, 42, 42, 0.824);
+}
+
+#users {
+  margin:15px auto;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#share-area {
+  width: 370px;
+  margin-top: 5px;
+}
+
+#share-pics {
+  width: 370px;
+  height: auto;
+}
+
+#comment-area {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#comment-button {
+  border-radius: 10px;
+  background-color: rgba(250, 108, 108, 0.831);
+  color: white;
+  border: none;
+  width: 80px;
+  height: 25px;
+}
+
+#comment-button:hover{
+  background-color: rgba(255, 99, 71, 0.94);
+}
+
+#comment {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* User page styling starts here  */
+
 #my-villagers {
+  margin: 10px auto;
   text-align: center;
   width: 500px;
 }
@@ -76,22 +164,40 @@ i {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 500px;
-  border: 1px solid black;
 }
 
 #show-villager {
   width: 100px;
-  height: 150px;
+  height: 170px;
   text-align: center;
 }
 
 #profile-pic {
-  width: 90px;
-  height: auto;
+  width: auto;
+  height: 110px;
 }
 
-#share-pics {
-  width: 320px;
-  height: auto;
+#my-pictures {
+  text-align: center;
+}
+
+.delete-button {
+  font-size: 0.5em;
+}
+
+/* Villager show-page styling starts here  */
+
+#show-pic {
+  position: absolute;
+  left: 200px;
+  top: 140px;
+  width: auto;
+  height: 230px;
+}
+
+#villager-info {
+  position: absolute;
+  bottom: 110px;
+  right: 150px;
+  font-size: 1.4em;
 }

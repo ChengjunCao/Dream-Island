@@ -11,8 +11,15 @@ let villagerSchema = new mongoose.Schema({
   timestamps: true
 });
 
+let commentSchema = new mongoose.Schema({
+  content: String,
+}, {
+  timestamps: true
+});
+
 let pictureSchema = new mongoose.Schema({
-  url: String
+  url: String,
+  comments: [commentSchema]
 }, {
   timestamps: true
 });
