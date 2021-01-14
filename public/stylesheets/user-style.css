@@ -187,17 +187,20 @@ i {
 
 /* Villager show-page styling starts here  */
 
+#show-area {
+  width: 800px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 #show-pic {
-  position: absolute;
-  left: 200px;
-  top: 140px;
   width: auto;
   height: 230px;
 }
 
 #villager-info {
-  position: absolute;
-  bottom: 110px;
-  right: 150px;
+
   font-size: 1.4em;
 }
