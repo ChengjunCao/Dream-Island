@@ -1,8 +1,9 @@
 var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
 
-router.get('/users', usersCtrl.index)
-router.get('/users/:id', usersCtrl.show)
+router.get('/users', usersCtrl.index);
+router.get('/users/community', usersCtrl.community);
+router.get('/users/:id', usersCtrl.show);
 
 router.post('/info', isLoggedIn, usersCtrl.addInfo);
 

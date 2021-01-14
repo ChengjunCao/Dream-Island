@@ -19,7 +19,7 @@ router.get('/oauth2callback', function(req, res, next) {
     if (!user) { return res.redirect('/users'); }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
-      return res.redirect('/users/' + user.name);
+      return res.redirect('/users/' + user._id);
     });
   })(req, res, next);
 });

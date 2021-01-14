@@ -1,57 +1,41 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Dream Island</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/user-style.css' />
-</head>
-
-<body>
-    <nav>
-        <div>
-            <ul>
-                <a href="" id="brand-logo">Dream Island</a>
-                <li id="navbar">
-                    <% if (user) { %>
-                        <a href="/logout"><i class="material-icons left">trending_flat</i><span class="log">Log
-                                Out</span></a>
-                        <% } else { %>
-                            <a href="/auth/google"><i class="material-icons left">vpn_key</i><span class="log">Login with
-                                    Google</span></a>
-                            <% } %>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <% if (!user.charactername) { %>
-    <h1>Welcome, <%= user.name %></h1>
-    <form action="/info" method="POST">
-        <p>Please fill in your Character name:</p>
-        <input type="text" name="charactername">
-        <p>Please fill in your Island name:</p>
-        <input type="text" name="islandname"> <br><br>
-        <button type="submit">Add to your page</button>
-    </form>
-    <% } else { %>
-    <h1>Hi <%= user.charactername %>! Welcome back to <%= user.islandname %>!</h1>
-    <section id="my-villagers">
-        <h2>My Villagers</h2>
-    <div id="myvil-flex">
-        <% if (user.villagers.length) { %>
-            <% user.villagers.forEach(function(v) { %>
-            <div id="show-villager">
-            <a href="/villagers/<%= v._id %>"><%= v.name %></a>
-            <img id="profile-pic" src="<%= v.profilepic %>" alt="picture of <%= v.name %>">
-            </div>
-            <% }); %>
-        <% } else { %>
-            <h5>No Villagers Yet</h5>
-        <% } %> <br><br>
+<%- include('../header') %>
+    <div id="main-section">
+        <% if (!user.charactername) { %>
+            <h1>Welcome, <%= user.name %>
+            </h1>
+            <form action="/info" method="POST">
+                <p>Please fill in your Character name:</p>
+                <input type="text" name="charactername">
+                <p>Please fill in your Island name:</p>
+                <input type="text" name="islandname"> <br><br>
+                <button type="submit">Add to your page</button>
+            </form>
+            <% } else { %>
+                <h1>Hi <%= user.charactername %>! Welcome back to <%= user.islandname %>!</h1>
+                <section id="my-villagers">
+                    <h2>My Villagers</h2>
+                    <div id="myvil-flex">
+                        <% if (user.villagers.length) { %>
+                            <% user.villagers.forEach(function(v) { %>
+                                <div id="show-villager">
+                                    <a href="/villagers/<%= v._id %>">
+                                        <%= v.name %>
+                                    </a><br>
+                                    <img id="profile-pic" src="<%= v.profilepic %>" alt="picture of <%= v.name %>">
+                                    <form action="/villagers/<%= v._id %>?_method=DELETE" method="POST">
+                                        <button type="submit">X</button>
+                                    </form>
+                                </div>
+                                <% }); %>
+                                    <% } else { %>
+                                        <h5>No Villagers Yet</h5>
+                                        <% } %> <br><br>
+                    </div>
+                    <a href="/users/<%= user._id %>/villagers/new">Add Villager</a>
+                </section>
+                <a href="/users/<%= user._id %>/pictures/new">Add Picture</a>
+                <% } %>
     </div>
-    <a href="https://dream-island.herokuapp.com/users/<%= user._id %>/villagers/new">Add Villager</a>
-    </section>
-    <% } %>
+    </body>
 
-</body>
-</html>
+    </html>

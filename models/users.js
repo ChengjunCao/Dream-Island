@@ -5,8 +5,17 @@ let villagerSchema = new mongoose.Schema({
   birthday: String,
   species: String,
   personality: String,
+  catchphrase: String,
   profilepic: String,
-})
+}, {
+  timestamps: true
+});
+
+let pictureSchema = new mongoose.Schema({
+  url: String
+}, {
+  timestamps: true
+});
 
 let userSchema = new mongoose.Schema({
   name: String,
@@ -14,6 +23,7 @@ let userSchema = new mongoose.Schema({
   charactername: String,
   islandname: String,
   villagers: [villagerSchema],
+  pictures: [pictureSchema],
   googleId: String
 }, {
   timestamps: true

@@ -1,0 +1,19 @@
+<%- include('./header') %>
+    <h1>Hello</h1>
+    <div id="users">
+        <% users.forEach(function(user) { %>
+            <% if (user.pictures.length) { %>
+                <div>
+                    <p>
+                        <%= user.charactername %> from <%= user.islandname %>
+                    </p>
+                    <% user.pictures.forEach(function(picture) { %>
+                        <img id="share-pics" src="<%= picture.url %>">
+                        <% }) %>
+                </div>
+                <% } %>
+                    <% }) %>
+    </div>
+    </body>
+
+    </html>

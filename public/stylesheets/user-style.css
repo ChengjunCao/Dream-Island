@@ -1,47 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)),url(https://media.idownloadblog.com/wp-content/uploads/2020/04/Animal-Crossing-iPhone-wallpaper-Matt-MacPherson-iDownloadblog-1.png);
   background-size: cover;
+  font-family: 'Gaegu', cursive;
+}
+
+li {
+  list-style: none;
 }
 
 a {
-  color: rgb(255, 255, 255);
+  color: beige;
   text-decoration: none;
-  font-weight: bold;
 }
 
-h1 {
-  text-align: center;
-}
-
-nav {
-  position: absolute;
-  left:0;
-  top:0;
-  height: 50px;
+header {
+  height: 55px;
   width: 100%;
-  background: rgba(87, 124, 181, 0.9);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(87, 125, 181, 0.797);
+  font-family: 'Indie Flower', cursive;
 }
 
-#navbar {
-  position: absolute;
-  right: 30px;
-  top: 13px;
-  list-style: none;
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 
+nav > ul > li {
+  padding: 0 20px;
 }
 
 #brand-logo {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 2.6em;
+  font-weight: bold;
+  color: rgba(254, 201, 104, 0.899);
+}
+
+#nav-bar {
   position: relative;
-  bottom: 7px;
-  font-size: 2em;
+  left: 110px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+i {
+  position: relative;
+  top: 5px;
 }
 
 .log {
   position: relative;
-  bottom: 5px;
-  left: 5px;
+  left: 7px;
 }
 
 #my-villagers {
@@ -59,6 +81,8 @@ nav {
 }
 
 #show-villager {
+  width: 100px;
+  height: 150px;
   text-align: center;
 }
 
@@ -67,3 +91,7 @@ nav {
   height: auto;
 }
 
+#share-pics {
+  width: 320px;
+  height: auto;
+}

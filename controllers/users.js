@@ -1,10 +1,20 @@
 const User = require('../models/users');
 
 function index(req,res) {
-  console.log(req.query)
   User.find({}, function(err, users) {
     if (err) return next(err);
     res.render('index', {
+      users,
+      user: req.user,
+      name: req.query.name,
+    });
+  })
+}
+
+function community(req,res) {
+  User.find({}, function(err, users) {
+    if (err) return next(err);
+    res.render('community', {
       users,
       user: req.user,
       name: req.query.name,
@@ -34,6 +44,7 @@ function addInfo(req,res) {
 
 module.exports = {
   index,
+  community,
   show,
   addInfo
 };

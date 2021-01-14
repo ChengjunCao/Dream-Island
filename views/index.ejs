@@ -5,21 +5,29 @@
   <title>Dream Island</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/index-style.css' />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <nav>
+  <header id="header">
     <div>
+      <a href="/users" id="brand-logo">Dream Island</a>
+    </div>
+    <nav id="nav-bar">
       <ul>
-        <a href="" id="brand-logo">Dream Island</a>
-        <li id="navbar">
+        <li><a href="/users/community">Community</a></li>
+        <li>
           <% if (user) { %>
-          <a href="/logout"><i class="material-icons left">trending_flat</i><span class="log">Log Out</span></a>
-          <% } else { %>
-          <a href="/auth/google"><i class="material-icons left">vpn_key</i><span class="log">Login with Google</span></a> <% } %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i><span class="log">Log Out</span></a>
+            <% } else { %>
+              <a href="/auth/google"><i class="material-icons left">vpn_key</i><span class="log">Login with
+                  Google</span></a>
+              <% } %>
         </li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </body>
+
 </html>

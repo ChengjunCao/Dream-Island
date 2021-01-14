@@ -15,26 +15,37 @@ function createVillager(req,res) {
     })
 }
 
+function deleteVillager(req,res) {
+    let idx = req.user.villagers.findIndex(v => v.id === req.params.id)
+    req.user.villagers.splice(idx, 1);
+    req.user.save(function(err) {
+        res.redirect(`/users/${req.user._id}`)
+    })
+}
+
 function show(req,res) {
-    console.log(req.params.id),
-    User.find({}, function(err, users) {
-        users.forEach(function(user) {
-            // console.log(user.villagers)
-            let villagers = user.villagers;
-            villagers.forEach(function(villager) {
-                console.log(villager._id)
-                if (villager._id === req.params.id) {
-                    console.log(villager)
-                }
-            })
-            // let result = villagers.find( ({_id}) => _id === req.params.id)
-            // console.log(result)
-        })
+    let result = req.user.villagers.find(v => v.id === req.params.id)
+    res.render('villagers/show', {result, user: req.user})
+}
+
+function editCatchphrase(req,res) {
+    let result = req.user.villagers.find(v => v.id === req.params.id)
+    res.render('villagers/edit', {result, user: req.user})
+}
+
+function updateCatchphrase(req,res) {
+    let result = req.user.villagers.find(v => v.id === req.params.id)
+    result.catchphrase = req.body.catchphrase;
+    req.user.save(function(err) {
+        res.redirect(`/villagers/${result._id}`)
     })
 }
 
 module.exports = {
     newVillager,
     createVillager,
-    show
+    deleteVillager,
+    show,
+    editCatchphrase,
+    updateCatchphrase
 }

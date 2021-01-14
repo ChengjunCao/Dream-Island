@@ -1,0 +1,11 @@
+<%- include('../header') %>
+    <h2>Add Pictures</h2>
+    <form action="/users/<%= user._id %>/pictures" method="POST">
+        <label>Url:
+            <input type="text" name="url">
+        </label><br>
+        <input type="submit" value="Add Picture">
+    </form>
+    </body>
+
+    </html>
