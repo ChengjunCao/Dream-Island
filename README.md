@@ -9,12 +9,12 @@ Dream Island is your Animal Crossing island on a website. Here you are able to a
 ![Screenshot2](https://i.imgur.com/7mShwGW.png)
 
 #### Skills/Technologies Used
-HTML
-CSS
-Javascript
-Mongoose
-MongoDB
-Heroku
+	- HTML
+	- CSS
+	- Javascript
+	- Mongoose
+	- MongoDB
+	- Heroku
 
 #### Future Features
 Users are able to upload file images.
